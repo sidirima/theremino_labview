@@ -22,7 +22,7 @@ The second oscillator is responsible for the pitch variation. The instrument use
 The antennas are essentially one electrode of a capacitor, with the hand of the thereminist being the other electrode. Thus, by the hand movements there is a variation in the capacitive load of the oscillators. For instance, if the thereminist holds their one hand position over the volume antenna and moves their other hand, there is only a pitch variation with a stable volume.
 
 ## Our project circuitry
-To design the circuit of the project, we use [fritzing](https://fritzing.org/), an open source cross-platform designer program which is quite easy to use and allows graphic view for simple Arduino projects. The only downside is that it has a limited amount of components. The circuit is the one in the image below
+To design the circuit of the project, we use [fritzing](https://fritzing.org/), an open source cross-platform designer program which is quite easy to use and allows sketch design for simple Arduino projects. The only downside is that it has a limited amount of components. The circuit is the one in the image below.
 <p align = "center">
   <img width="2520" height="1515" alt="Theremino Sketch_bb" src="https://github.com/user-attachments/assets/879130b9-3298-4c28-9a34-d044fd9a7d7c" />
 </p>
@@ -31,7 +31,7 @@ To design the circuit of the project, we use [fritzing](https://fritzing.org/), 
 - 1x Arduino Nano
 - 2x HC-SR04 Ultrasonic Sensors
 - 1x LM386 Audio Amplifier
-- 1x MCP41010 Digital 10kΩ Potentiometer
+- 1x MCP41010  10kΩ Digital Potentiometer
 - 1x 470kΩ Rotary Potentiometer
 - 1x 10μF Electrolytic Capacitor
 - 1x 100nF Ceramic Capacitor
@@ -39,4 +39,10 @@ To design the circuit of the project, we use [fritzing](https://fritzing.org/), 
 - 1x 50nF Electrolytic Capacitor
 - 1x 100Ω Resistor
 - 1x Speaker 4Ω, 3V
+
+## Ultrasonic Sensor Working Principle
+Instead of using our hands to vary the capacitance used in the oscillators, we use two ultrasonic sensor modules, one for varying the pitch and the other for varying the volume of the generated signal. These sensors are based on the principle of sound wave reflection, in this particular case an ultrasonic one (>20kHz). As we can see in the picture below, the sensor module has two metal barrels, one containing the sound transmitter and the other the receiver. This wave will bounce in every obstacle in its way, in our case it would be the hand of the thereminist and return to the receiver. The distance calculation is performed by using the time difference between transmission and reception of the signal.
+<p align = "center">
+  <img width="512" height="262.5" alt="image" src="https://github.com/user-attachments/assets/b5a35b19-1932-4a1d-9de1-c4435061307f" />
+</p>
 
