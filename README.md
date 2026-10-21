@@ -1,7 +1,7 @@
 # Ultrasonic Theremin using Arduino Nano and LabVIEW
-The purpose of this project is to implement a Theremin, an electronic musical instrument, using ultrasonic sensors and a simple Arduino-family microcontroller. We use serial connection between the microcontroller and a computer, so as to have a visual representation of the sensor measurements using the National Instruments LabVIEW software. 
+The purpose of this project is to implement a **Theremin**, an electronic musical instrument, using ultrasonic sensors and a simple Arduino-family microcontroller. We use serial connection between the microcontroller and a computer, so as to have a **visual representation of the sensor measurements** using the National Instruments LabVIEW software. 
 
-This project is a practical experiment in the usage of LabVIEW software and the VISA library plugin (Virtual Instrument Software Architecture).
+This project is a practical experiment in the usage of **LabVIEW** software and the **VISA library plugin** (Virtual Instrument Software Architecture).
 
 
 ## What is a Theremin?
