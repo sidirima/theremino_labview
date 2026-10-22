@@ -3,6 +3,15 @@ The purpose of this project is to implement a **Theremin**, an electronic musica
 
 This project is a practical experiment in the usage of **LabVIEW** software and the **VISA library plugin** (Virtual Instrument Software Architecture).
 
+## Project Index
+
+#### 1. Arduino Code 
+
+#### 2. LabVIEW visualization file
+
+#### 3. Schematics / Designs
+
+#### 4. Pictures / Videos
 
 ## What is a Theremin?
 The Theremin was invented by Leon Theremin, a Soviet engineer in the 1920s. It is a wooden or plastic box with two metal antennas, one vertical and one horizontal. The vertical antenna is used for pitch variation and the horizontal one for volume variation. The circuitry inside the box is responsible for sound generation. The thereminist is using their hands movements to alter the sound of the instrument.
@@ -34,9 +43,9 @@ To design the circuit of the project, we use [fritzing](https://fritzing.org/), 
 - 1x MCP41010  10kΩ Digital Potentiometer
 - 1x 470kΩ Rotary Potentiometer
 - 1x 10μF Electrolytic Capacitor
-- 1x 100nF Ceramic Capacitor
+- 1x 100nF Electrolytic Capacitor
 - 1x 220μF Εlectrolytic Capacitor
-- 1x 50nF Electrolytic Capacitor
+- 1x 50nF Ceramic Capacitor
 - 1x 100Ω Resistor
 - 1x Speaker 4Ω, 3V
 
@@ -53,5 +62,17 @@ The digital potentiometer used is manufactured by Microchip, and it is a non-vol
 
 In our case, we use this potentiometer to translate the digital output signals of the Arduino microcontroller to voltage. The use of this potentiometer is a necessity if we want to keep the "handsfree" principle of the original theremin instrument. With the use of the digital potentiometer, volume and pitch are only controlled by the parameters of the ultrasonic sensors.
 
+Although, in the end we end up using a simple 470kΩ rotary potentiometer as well, acting as a "Master Volume" knob for the instrument.
+
 ## Audio Amplification
-The signals generated via the Arduino microcontroller are not "speaker level" signals in order to be heard properly. Thus, we need to amplify and normalize the generated sound signals. 
+The signals generated via the Arduino microcontroller are not "speaker level" signals in order to be heard properly. Thus, we need to amplify and normalize the generated sound signals.
+In order to achieve this, we need to use a specified Audio Amplifier IC, such as the LM386. This IC can safely drive a 4Ω or 8Ω speaker using a low voltage power source, in our case a +9V DC power supply or a 9V battery. 
+
+The difference between the LM386 and other more common operational amplifier ICs (such as the LM741) is that those ICs have a max output current of 20mA, thus we need a load of very high resistance in order for them to function properly. Using a non-audio specific amplifier IC would require the use of external Push-Pull stages, making the circuit rather complex and ineffective due to high pricing of the components.
+<p align = "center">
+  <img width="1353" height="555" alt="Schematic_LM386-Amplifier_2026-10-22" src="https://github.com/user-attachments/assets/08b3692e-a99a-4ced-8c0c-fbf86d99e243" />
+</p>
+As we can see in the schematic diagram above, the audio amplifier section of the project is a non-inverting amplifier with a standard voltage gain of 20, due to the fact that the gain pins of the IC are not connected. Capacitors C1 and C2 are bypass capacitors, one connected to the IC and the other for voltage filtering. C3 and R1 form a [Zobel Network](https://www.wavecor.com/html/zobel_networks.html) filter that is used for impedance linearization of the drive speaker. It is used to cutoff the voice coil inductance in high frequencies. These components values are suggested in the datasheet for LM386.
+
+
+
