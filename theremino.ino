@@ -1,7 +1,5 @@
-
 #include <SPI.h>  // include the SPI library
 
- 
 #define ECHOPIN_volume 2          // Pin to receive echo pulse
 #define TRIGPIN_volume 3          // Pin to send trigger pulse
 #define ECHOPIN_pitch 4           // Pin to receive echo pulse
@@ -106,7 +104,6 @@ void loop()
     delay(50);                                    // Wait 50mS before next ranging
     
 }
- 
  
 // ============================
 // ======== SUBROUTINE ========
