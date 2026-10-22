@@ -46,3 +46,12 @@ Instead of using our hands to vary the capacitance used in the oscillators, we u
   <img width="512" height="262.5" alt="image" src="https://github.com/user-attachments/assets/b5a35b19-1932-4a1d-9de1-c4435061307f" />
 </p>
 
+The generated sound is nothing but a square wave signal with variable frequency and amplitude. The frequency parameter is defined by the "Pitch" ultrasonic sensor value, whereas the amplitude parameter is defined by the "Volume" sensor value.
+
+## Is the Digital Potentiometer necessary?
+The digital potentiometer used is manufactured by Microchip, and it is a non-volatile 10kΩ variable resistance. The IC we selected uses the SPI serial protocol for communication with the microcontroller. The reason for selecting it is the packaging, which is a standard DIP-8, making it easy to test on a breadboard or solder to a PCB. 
+
+In our case, we use this potentiometer to translate the digital output signals of the Arduino microcontroller to voltage. The use of this potentiometer is a necessity if we want to keep the "handsfree" principle of the original theremin instrument. With the use of the digital potentiometer, volume and pitch are only controlled by the parameters of the ultrasonic sensors.
+
+## Audio Amplification
+The signals generated via the Arduino microcontroller are not "speaker level" signals in order to be heard properly. Thus, we need to amplify and normalize the generated sound signals. 
