@@ -5,9 +5,9 @@ This project is a practical experiment in the usage of **LabVIEW** software and 
 
 ## Project Index
 
-#### 1. Arduino Code 
+#### [1. Arduino Code](/Arduino_code) 
 
-#### 2. LabVIEW visualization file
+#### [2. LabVIEW visualization file](/LabVIEW)
 
 #### 3. Schematics / Designs
 
