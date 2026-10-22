@@ -51,6 +51,7 @@ To design the circuit of the project, we use [fritzing](https://fritzing.org/), 
 
 ## Ultrasonic Sensor Working Principle
 Instead of using our hands to vary the capacitance used in the oscillators, we use two ultrasonic sensor modules, one for varying the pitch and the other for varying the volume of the generated signal. These sensors are based on the principle of sound wave reflection, in this particular case an ultrasonic one (>20kHz). As we can see in the picture below, the sensor module has two metal barrels, one containing the sound transmitter and the other the receiver. This wave will bounce in every obstacle in its way, in our case it would be the hand of the thereminist and return to the receiver. The distance calculation is performed by using the time difference between transmission and reception of the signal.
+
 <p align = "center">
   <img width="512" height="262.5" alt="image" src="https://github.com/user-attachments/assets/b5a35b19-1932-4a1d-9de1-c4435061307f" />
 </p>
@@ -69,10 +70,12 @@ The signals generated via the Arduino microcontroller are not "speaker level" si
 In order to achieve this, we need to use a specified Audio Amplifier IC, such as the LM386. This IC can safely drive a 4Ω or 8Ω speaker using a low voltage power source, in our case a +9V DC power supply or a 9V battery. 
 
 The difference between the LM386 and other more common operational amplifier ICs (such as the LM741) is that those ICs have a max output current of 20mA, thus we need a load of very high resistance in order for them to function properly. Using a non-audio specific amplifier IC would require the use of external Push-Pull stages, making the circuit rather complex and ineffective due to high pricing of the components.
+
 <p align = "center">
   <img width="1353" height="555" alt="Schematic_LM386-Amplifier_2026-10-22" src="https://github.com/user-attachments/assets/08b3692e-a99a-4ced-8c0c-fbf86d99e243" />
 </p>
-As we can see in the schematic diagram above, the audio amplifier section of the project is a non-inverting amplifier with a standard voltage gain of 20, due to the fact that the gain pins of the IC are not connected. Capacitors C1 and C2 are bypass capacitors, one connected to the IC and the other for voltage filtering. C3 and R1 form a Zobel Network filter that is used for impedance linearization of the drive speaker. It is used to cutoff the voice coil inductance in high frequencies. These components values are suggested in the datasheet for LM386.
+
+As we can see in the schematic diagram above, the audio amplifier section of the project is a non-inverting amplifier with a standard voltage gain of 20, due to the fact that the gain pins of the IC are not connected. Capacitors C1 and C2 are bypass capacitors, one connected to the IC and the other for voltage filtering. C3 and R1 form a [Zobel Network](https://www.wavecor.com/html/zobel_networks.html) filter that is used for impedance linearization of the drive speaker. It is used to cutoff the voice coil inductance in high frequencies. These components values are suggested in the datasheet for LM386.
 
 
 
