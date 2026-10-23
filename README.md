@@ -49,7 +49,7 @@ To design the circuit of the project, we use [fritzing](https://fritzing.org/), 
 - 1x 100nF Electrolytic Capacitor
 - 1x 220μF Εlectrolytic Capacitor
 - 1x 50nF Ceramic Capacitor
-- 1x 100Ω Resistor
+- 1x 10Ω Resistor
 - 1x Speaker 4Ω, 3V
 
 ## Ultrasonic Sensor Working Principle
