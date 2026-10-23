@@ -110,8 +110,8 @@ void loop()
 // ============================
  
 void digitalPotWrite(byte value) 
-	{
-    // take the SS pin low to select the chip:
+{
+	// take the SS pin low to select the chip:
 	digitalWrite(CS_Pin,LOW);
     
 	SPI.transfer(B00010001); // The command byte
@@ -119,6 +119,6 @@ void digitalPotWrite(byte value)
     
     // take the SS pin high to de-select the chip
 	digitalWrite(CS_Pin,HIGH);
-	}
+}
 
 
