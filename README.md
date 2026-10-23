@@ -84,7 +84,23 @@ $$\ f = {1 \over {2πRC_4}} = {1 \over {2π \cdot 4Ω \cdot 220μF}} \approx 181
 ## Using LabVIEW for visualization
 [LabVIEW](https://www.ni.com/en/shop/labview.html?srsltid=AYCX9vL26RLTX9zwwPdzUQJAdKk94lcwBNWDP5UKMtAPKmJHZS46p3xI) stands for _Laboratory Virtual Instrument Engineering Workbench_ and is a graphical programming environment that allows a user to design and test systems with an intuitive programming perspective. It can be used alongside **Data Acquisition (DAQ)** systems for monitoring sensors in industrial systems. With the use of its libraries we can achieve rather complex measurement system design.
 
+For enabling communication between LabVIEW and Arduino microcontroller we will use the **VISA library** I/O tools. Specifically, we need to use 3 different VISA modules:
 
+##### VISA Configure Serial Port
+This specific module initializes the serial port communication between the Arduino's USB port and LabVIEW. In the image below, we can see the module structure. 
+<p align = "center">
+  <img width="413" height="169" alt="image" src="https://github.com/user-attachments/assets/e2148c02-e096-4ef6-b221-c4c8b3e401e0" />
+</p>
+
+In _VISA resource name_ field we define a constant with the COM port number that is used by the Arduino. _baud rate_ default is 9600. We chain connect the _VISA resource name out_ and _error out_ with the next VISA modules.
+
+##### VISA Read
+This module is used to read specific number of bytes from the VISA resource name interface. Its structure is shown in the image below.
+<p align = "center">
+  <img width="374" height="73" alt="image" src="https://github.com/user-attachments/assets/c2b33ced-cf35-4249-94ca-368a23ba3e52" />
+</p>
+
+In _byte count_ field we define a number of bytes to read from the COM port of the Arduino. The _read buffer_ is the "output" for those data.
 
 
 
