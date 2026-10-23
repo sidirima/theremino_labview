@@ -87,6 +87,11 @@ $$\ f = {1 \over {2πRC_4}} = {1 \over {2π \cdot 4Ω \cdot 220μF}} \approx 181
 ## Using LabVIEW for visualization
 [LabVIEW](https://www.ni.com/en/shop/labview.html?srsltid=AYCX9vL26RLTX9zwwPdzUQJAdKk94lcwBNWDP5UKMtAPKmJHZS46p3xI) stands for _Laboratory Virtual Instrument Engineering Workbench_ and is a graphical programming environment that allows a user to design and test systems with an intuitive programming perspective. It can be used alongside **Data Acquisition (DAQ)** systems for monitoring sensors in industrial systems. With the use of its libraries we can achieve rather complex measurement system design.
 
+<p align  = "center">
+  [![Click for video](https://img.youtube.com/vi/w7z50E2vQZ8/0.jpg)](https://www.youtube.com/watch?v=w7z50E2vQZ8)
+</p>
+
+
 For enabling communication between LabVIEW and Arduino microcontroller we will use the **VISA library** I/O tools. Also, we need to use simple string functions to isolate the data read from the COM port of the Arduino. Specifically, we use the modules below:
 
 ### **_VISA Configure Serial Port_**
