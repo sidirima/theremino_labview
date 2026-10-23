@@ -1,4 +1,4 @@
-#include <SPI.h>  // include the SPI library
+#include <SPI.h>  // include the SPI library for MCP41010
 
 #define ECHOPIN_volume 2          // Pin to receive echo pulse
 #define TRIGPIN_volume 3          // Pin to send trigger pulse
@@ -39,7 +39,7 @@ void setup()
 void loop()
    {
     // ==============================
-    // ultra sonic distance for pitch
+    // Pitch Ultrasonic Sensor
     // ==============================
     
     digitalWrite(TRIGPIN_pitch, LOW);             // Set the trigger pin to low for 2uS
@@ -68,7 +68,7 @@ void loop()
   
  
     // ===============================
-    // ultra sonic distance for volume
+    // Volume Ultrasonic Sensor
     // ===============================
  
     digitalWrite(TRIGPIN_volume, LOW);             // Set the trigger pin to low for 2uS
