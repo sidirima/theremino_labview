@@ -78,7 +78,7 @@ The difference between the LM386 and other more common operational amplifier ICs
   <img width="1353" height="555" alt="Schematic_LM386-Amplifier_2026-10-22" src="https://github.com/user-attachments/assets/08b3692e-a99a-4ced-8c0c-fbf86d99e243" />
 </p>
 
-As we can see in the schematic diagram above, the audio amplifier section of the project is a non-inverting amplifier with a standard voltage gain of 20, due to the fact that the gain pins of the IC are not connected. Capacitors C1 and C2 are bypass capacitors, one connected to the IC and the other for voltage filtering. C3 and R1 form a [Zobel Network](https://www.wavecor.com/html/zobel_networks.html) filter that is used for impedance linearization of the drive speaker. Specifically, it cutoffs the voice coil inductance in high frequencies. These components values are suggested in the datasheet for LM386.
+As we can see in the schematic diagram above, the audio amplifier section of the project is a non-inverting amplifier with a standard voltage gain of 20, due to the fact that the gain pins of the IC are not connected. C1 is bypass and C2 is a decoupling capacitor, one connected to the IC and the other for voltage filtering. C3 and R1 form a [Zobel Network](https://www.wavecor.com/html/zobel_networks.html) filter that is used for impedance linearization of the drive speaker. Specifically, it cutoffs the voice coil inductance in high frequencies. These components values are suggested in the datasheet for LM386.
 
 Then, capacitor C4 is used as a passive First Order Highpass filter with cutoff frequency of 180 Hz using a 4Ω speaker. This is calculated using the mathematical expression below:
 
