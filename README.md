@@ -6,10 +6,13 @@ This project is a practical experiment in the usage of **LabVIEW** software and 
 ## Project Index
 
 #### 1. [Arduino Code](/Arduino_code) 
+The folder contains the code used for Arduino microcontroller
 
 #### 2. [LabVIEW visualization file](/LabVIEW)
+The folder contains the LabVIEW designed system files for visualization of the Theremin pitch and volume parameters
 
-#### 3. Schematics / Designs
+#### 3. [Schematics / Designs](/Schematics)
+The folder contains the schematics of the project, designed in EasyEDA and fritzing, and also the .STL files for the case enclosure
 
 #### 4. Pictures / Videos
 
