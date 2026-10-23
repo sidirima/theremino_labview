@@ -95,6 +95,7 @@ alt="IMAGE ALT TEXT HERE" width="560" height="420" border="10" /></a>
 </p>
 
 
+
 For enabling communication between LabVIEW and Arduino microcontroller we will use the **VISA library** I/O tools. Also, we need to use simple string functions to isolate the data read from the COM port of the Arduino. Specifically, we use the modules below:
 
 ### **_VISA Configure Serial Port_**
@@ -123,4 +124,23 @@ This module is used to finalize the period of communication defined by the VISA 
 This module specifies the data types of an input string, in our case the _read buffer_ from VISA Read module and extract the data according to the format specified in _format string_ field.
 <p align = "center">
   <img width="341" height="105" alt="image" src="https://github.com/user-attachments/assets/ad53cd07-a8eb-4e51-8b19-a6e103b829fc" />
+</p>
+
+### **_Numeric Indicators_**
+We use two seperate numeric indicators for visualization of the parameters value read from the Ultrasonic Sensors
+<p align = "center">
+  <img width="648" height="358" alt="image" src="https://github.com/user-attachments/assets/f7ff5937-618e-47bd-a7e4-f63a429e3d92" />
+
+</p>
+
+### **_Boolean Indicators_**
+The boolean indicators we use are to monitor the octaves and notes calculated via a LabVIEW case structure
+<p align = "center">
+  <img width="936" height="276" alt="image" src="https://github.com/user-attachments/assets/2188ecbb-1f6f-4fdb-8de4-5939b8a80577" />
+</p>
+
+### **_Case Structure_**
+The classic switch - case structure. We use 2 of these case structures, one to define the octave and one to define the note of each octave. On the image below we can see the case selector when the note is B6.
+<p align = "center">
+  <img width="1019" height="713" alt="image" src="https://github.com/user-attachments/assets/a91f362f-6dab-452a-b388-af43b93ab9e4" />
 </p>
